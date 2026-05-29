@@ -10,6 +10,11 @@ const Pricing = () => {
     >
       <div className="mx-auto max-w-7xl">
 
+        <SectionHeading
+          title="Premium Pricing Plans"
+          subtitle="Choose the ideal digital experience package for your brand."
+        />
+
         <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
           {pricingPlans.map((plan, index) => (
             <PricingCard

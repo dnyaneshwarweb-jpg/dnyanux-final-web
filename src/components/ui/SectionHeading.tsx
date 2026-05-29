@@ -1,28 +1,32 @@
-type SectionHeadingProps = {
-  badge: string;
+interface SectionHeadingProps {
   title: string;
-  description: string;
-};
+  subtitle?: string;
+  badge?: string;
+}
 
 const SectionHeading = ({
-  badge,
   title,
-  description,
+  subtitle,
+  badge,
 }: SectionHeadingProps) => {
   return (
-    <div className="mx-auto mb-20 max-w-3xl text-center">
+    <div className="mx-auto max-w-3xl text-center">
 
-      <div className="mb-5 inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-zinc-400 backdrop-blur-xl">
-        {badge}
-      </div>
+      {badge && (
+        <span className="mb-4 inline-block rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1 text-sm font-medium text-cyan-400">
+          {badge}
+        </span>
+      )}
 
-      <h2 className="text-4xl font-bold leading-tight md:text-6xl">
+      <h2 className="text-4xl font-bold tracking-tight text-white md:text-5xl">
         {title}
       </h2>
 
-      <p className="mt-6 text-lg leading-relaxed text-zinc-400">
-        {description}
-      </p>
+      {subtitle && (
+        <p className="mt-5 text-lg leading-relaxed text-zinc-400">
+          {subtitle}
+        </p>
+      )}
 
     </div>
   );
